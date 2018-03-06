@@ -9,6 +9,32 @@ import foods from '../foods';
 export class FoodListComponent implements OnInit {
 
   constructor() { }
+  show = false;
+  foods:Object[] = foods;
+  nuevaComida = {};
+  todayList = [];
+  totalCalories = 0;
+  count=1;
+
+  addToday(food){
+    if(this.todayList.indexOf(food)=== -1){
+      food.quantity=1;
+      this.todayList.push(food)
+    }else{
+      this.todayList[this.todayList.indexOf(food)].quantity++;
+    }
+    console.log(this.todayList);
+    this.totalCalories+= food.calories;
+  }
+  
+  addFood(){
+    this.show = true;
+  }
+
+  pushToFoods(){
+    this.foods.unshift(this.nuevaComida);
+    this.show = false;
+  }
 
   ngOnInit() {
   }
