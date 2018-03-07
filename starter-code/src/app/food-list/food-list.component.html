@@ -5,7 +5,7 @@
   <br>
   <input [(ngModel)]="nuevaComida.name" placeholder="nombre" type="text" name="name">
   <br><br>
-  <input [(ngModel)]="nuevaComida.calories" placeholder="calorias" type="text" name="calories">
+  <input [(ngModel)]="nuevaComida.calories" placeholder="calorias" type="number" name="calories">
   <br><br>
   <input [(ngModel)]="nuevaComida.image" placeholder="imagen"type="text" name="image">
   <br><br>
@@ -29,7 +29,7 @@
         <h4>{{food.name}}</h4>
         <img width="300" [src]="food.image" [alt]="food.name">
         <p>Calorias: {{food.calories}}</p>
-        <p>cout {{food.quantity}}</p>
+        <p>Quantity: {{food.quantity}}</p>
       </li>
 </ul>
 </div>
